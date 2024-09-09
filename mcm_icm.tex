@@ -1,0 +1,197 @@
+%-------这是COMAP公司发布的2023年美赛官方LaTeX模板
+%-------官方仅提供了summary页面的样式，在此基础上，我们构建一个完整的Template!
+%-------下载网站：https://www.comap.com/contests/mcm-icm
+%-------E-mail:hnuzyx@outlook.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MCM/ICM LaTeX Template %%
+%% 2023 MCM/ICM           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{left=1in,right=0.75in,top=1in,bottom=1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Replace ABCDEF in the next line with your chosen problem
+% and replace 1111111 with your Team Control Number
+\newcommand{\Problem}{C}
+\newcommand{\Team}{2416613}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{newtxtext}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage{float}
+
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{appendix}
+\usepackage{indentfirst} % 首行缩进
+\usepackage{enumitem}  % 无序列表样式
+\usepackage{subfigure}  % 子图
+\usepackage[T1]{fontenc}  % 为了能识别双直引号
+\usepackage{algorithmicx}  % 伪代码
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}}     %Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{ \textbf{Output:}}    %UseOutput in the format of Algorithm
+\usepackage[pdftex]{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{url}
+\lhead{Team \Team}
+\rhead{}
+\cfoot{}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}
+
+% 设置listings宏包的参数
+\lstset{
+  language=Python, % 设置语言为C语言，根据需要可以设置为Python、Java等
+  basicstyle=\sffamily, % 设置代码字体
+  keywordstyle=\color{pink}, % 设置关键字颜色
+  commentstyle=\color{green}, % 设置注释颜色
+  % stringstyle=\color{red}, % 设置字符串颜色
+  showstringspaces=false, % 不显示字符串中的空格
+  breaklines=true, % 自动折行
+  frame=single, % 添加边框
+}
+
+\lstset{
+    numbers=left, 
+    numberstyle= \tiny, 
+    breaklines=true, % 自动折行
+    keywordstyle= \color{ blue!70},
+    commentstyle= \color{red!50!green!50!blue!50}, 
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    escapeinside=``, % 英文分号中可写入中文
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=2em
+} 
+
+\fancypagestyle{nopagenum}{
+  \fancyhf{} % 清空当前设置
+  \fancyhead[L]{Team 2416613}
+  \fancyhead[R]{\thepage}
+  % \fancyfoot[L]{} % 左脚注
+  % \fancyfoot[C]{} % 中脚注
+  % \fancyfoot[R]{} % 右脚注
+  \renewcommand{\headrulewidth}{0.4pt} % 页眉线宽，设为0可以去掉页眉线
+  \renewcommand{\footrulewidth}{0.4pt} % 页脚线宽，设为0可以去掉页脚线
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\graphicspath{{.}}  % Place your graphic files in the same directory as your main document
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif, .png}
+\thispagestyle{empty}
+\vspace*{-16ex}
+\centerline{\begin{tabular}{*3{c}}
+	\parbox[t]{0.3\linewidth}{\begin{center}\textbf{Problem Chosen}\\ \Large \textcolor{black}{\Problem}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{2024\\ MCM/ICM\\ Summary Sheet}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{Team Control Number}\\ \Large \textcolor{black}{\Team}\end{center}}	\\
+	\hline
+\end{tabular}}
+%%%%%%%%%%% Begin Summary %%%%%%%%%%%
+% Enter your summary here replacing the (red) text
+% Replace the text from here ...
+% \begin{center}
+%标题
+\begin{center}
+	\Huge {MM-LSTM: A Momentum LSTM Model for Tennis Match Prediction and Analysis}
+	\vspace{0.4cm}
+	
+	\normalsize\textbf{Summary}
+\end{center}
+\vspace{0.2cm}
+
+%下述段落为官方注意事项，写作时注意删除！
+% \textcolor{red}{%
+% Use this template to begin typing the first page (summary page) of your electronic report. This \newline
+% template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF \newline
+% electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.	\\[2ex]
+% Do not include the name of your school, advisor, or team members on this or any page.	\\[2ex]
+% Papers must be within the 25 page limit.	\\[2ex]
+% Be sure to change the control number and problem choice above.	\\
+% You may delete these instructions as you begin to type your report here. 	\\[2ex]
+% \textbf{Follow us @COMAPMath on Twitter or COMAPCHINAOFFICIAL on Weibo for the \newline
+% most up to date contest information.}
+% }
+% \end{center}
+% to here
+
+
+%生成随机段落,写作时删除这排语句即可！
+% \lipsum[1-3]
+Tennis is a widely acclaimed sport, and during matches, incredible swings often occur due to "momentum" which cannot be directly observed. To investigate the existence of this "momentum" and predict its trends, we utilize our \textbf{innovative MM-LSTM model} to model players' match states.
+
+% For problem 1, we analyze the \textbf{Spearman correlation coefficients} among various parameters in tennis matches and dimensionally reduce the data based on these correlations. We employ \textbf{the MM-LSTM (Momentum--Long Short-Term Memory) model} to capture the \textbf{sequential variation} in the game, simulating the player's match state through its Cell state, Input Gate, Forget Gate, and Output Gate. This allow us to observe the current match situation, forget past situations, and account for hitting actions. The model's performance is validated on the test set, \textbf{achieving a loss value of 0.047 and an impressive accuracy of 94.52\%.}
+
+For problem 1, we analyze the \textbf{Spearman correlation coefficients} among various parameters in tennis matches and dimensionally reduce the data based on these correlations.We employ \textbf{the Momentum-Long Short Term Memory (MM-LSTM) model} to model the \textbf{sequential variation} in the match. Its Cell state, Input Gate, Forget Gate, and Output Gate are used to simulate the player's match status, observations of the current match situation, forgetting past match situations, and the action of hitting the ball, respectively. Based on its output, we can judge the player's performance. The model's performance is validated on the test set, achieving a loss value of \textbf{0.047} and an impressive accuracy of \textbf{94.52\%}.
+
+
+% For problem 2, we conduct \textbf{forward derivation}, \textbf{excluding momentum} and considering various factors' impact on predicting probabilities and establishing a \textbf{random probability model}. Using the MM-LSTM model as a starting point, we then \textbf{reverse-explain  the rationale} behind the random probability model. Testing both models on the same dataset reveals the MM-LSTM model's superior accuracy, \textbf{outperforming the random probability model by 26 percentage points with a remarkable accuracy of 94.23\%.}
+
+For problem 2, we first conducted a \textbf{forward derivation}, \textbf{disregarding the momentum} and considering the impact of various factors on the predictive probability, thus establishing a \textbf{stochastic probability model}. Then, using the MM-LSTM model as a starting point, we \textbf{reverse-explain  the rationale} behind the stochastic probability model. We tested these two models on the same dataset. In the final results, the MM-LSTM model achieved a significantly higher prediction accuracy than the stochastic probability model, with an \textbf{improvement of 26 percentage points} at \textbf{94.23\%}. This clearly illustrates the importance of momentum.
+
+
+% For problem 3, we delve beyond the surface of the MM-LSTM model, discovering a subtle relationship between\textbf{ the gradient of the function representing the relative score difference of athletes and their relative momentum} and use it as an indicator representing the progress of the game. Considering the connection between score changes and predicted probabilities, we bridge the gap with \textbf{probability transitions}. Conducting a \textbf{gradient importance analysis} on all input factors, we calculate the partial derivatives of inputs to outputs to assess each indicator's impact on momentum. Based on this analysis, we propose \textbf{5} effective recommendations.
+
+For problem 3, we delve beyond the surface of the MM-LSTM model, discovering a subtle relationship between\textbf{ the gradient of the function} representing the relative score difference of athletes and their relative momentum and use it as an indicator representing the progress of the game. We considered the relationship between score changes and predicted probabilities, and established a bridge to represent momentum through \textbf{probability transition}. Taking more factors into account, we conducted a \textbf{gradient importance analysis} for all input factors. By calculating the partial derivatives of the input to the output, we determined the impact of various indices on momentum. Based on this, we proposed \textbf{5} effective recommendations.
+
+For problem 4, we compare the MM-LSTM model's probability output \textbf{predictions} with the \textbf{actual} values of the mentioned tennis match,achieving an accuracy of \textbf{ 90.71\% }and \textbf{visualizing the fitting curve} between predicted and real values. Additionally, we expand the model to include factors from both \textbf{subjective and objective }perspectives, \textbf{such as environmental conditions and psychological traits}. Lastly, we collect 2024 WTT table tennis match data and evaluate the \textbf{generalizability} of our MM-LSTM model to \textbf{table tennis}, finding that the model's performance did not match that of tennis due to the smaller dataset and insufficient description of match states. Increasing the amount of data will bring more improvement in model performance.
+
+Finally, we draft a memorandum summarizing our research findings, demonstrating the role of momentum in matches for coaches, and providing detailed advice for players on handling momentum.
+
+%关键词
+\vspace{0.4cm}
+\noindent \textbf{Keywords: }Momentum \quad LSTM \quad  Gradient  
+%%%%%%%%%%% End Summary %%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagestyle{fancy}
+% Uncomment the next line to generate a Table of Contents
+%\tableofcontents 
+\newpage
+\setcounter{page}{1}
+\rhead{Page \thepage~of~25}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%目录
+\tableofcontents
+\newpage
+
+%正文部分
+% \input{body/MCM-ICM_Summary}
+\input{body/section1.tex}
+\input{body/section2.tex}
+\input{body/problem1}
+\input{body/problem2}
+\input{body/problem3}
+\input{body/problem4}
+\input{body/model_analysis}
+% \input{body/section3.tex}
+\input{body/memo}
+\input{body/references}
+\input{body/section5.tex}
+\input{body/ai_report}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+% \end
+

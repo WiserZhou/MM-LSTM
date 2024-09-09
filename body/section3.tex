@@ -1,0 +1,136 @@
+\section{Model}
+\lipsum[1-4] \cite{1}
+
+\subsection{Equations}
+
+%数学公式：
+This is an equation:$$\frac{x}{y}=\frac{\sqrt[3]{x}}{\ln a}$$
+
+This is an equation with number:(Heat Equation)\ref{e1}
+\begin{equation}\label{e1}
+	c\rho\frac{\partial u}{\partial t}=k\nabla^2u+f
+\end{equation}
+
+Matrix:
+$$
+\left( \begin{matrix}
+1&		2&		3&		4\\
+a&		b&		c&		d\\
+x&		y&		z&		w\\
+\alpha&		\beta&		\gamma&		\varphi\\
+\end{matrix} \right) 
+$$
+
+Integral:
+
+$$
+\oint_l{pdx+qdy+rdz}
+$$
+
+Some Equation:
+\begin{align*}
+\cosh x = \frac {1}{2} (e^x + e^{-x}) &= \sum_{n = 0}^{\infty} \frac {x^{2n}}{(2n)!} \\
+\sinh x = \frac {1}{2} (e^x - e^{-x}) &= \sum_{n = 0}^{\infty} \frac {x^{2n + 1}}{(2n + 1)!} \\
+e^x &= \sum_{n = 0}^{\infty} \frac {x^n}{n!} = \lim_{n\to\infty} \left (1+\frac{x}{n} \right )^n\\
+\end{align*}
+
+\subsection{Figures}
+This is a figure\ref{fig:comap-logo}:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"figure/comap logo"}
+	\caption{Comap logo}
+	\label{fig:comap-logo}
+\end{figure}
+\subsection{Equations}
+
+
+% 描述运动员的动量p与时间之间的变化关系
+\begin{equation}
+p_i=\sum h_i(t)
+\end{equation}
+% 描述运动员具有的动量与各种因素之间的相互作用
+\begin{equation}
+\begin{aligned}
+p_* & =\sum m_i v_i \\
+& =\sum p_i
+\end{aligned}
+\end{equation}
+% 描述先决条件中基础概率与发球手位置增加的概率
+\begin{equation}
+P_{\text {base }}=\frac{1}{2} \end{equation}\begin{equation}
+R_{server}=0.173119165
+\end{equation}
+% 在这里指出发球位置对于胜利的影响
+\[ Pserver = \left\{
+\begin{array}{ll}
+2 \cdot R_{server}, & \text{set\_no} = 1 \\
+R_{server}, & \text{set\_no} = 2 \\
+0, & \text{set\_no} > 2
+\end{array}
+\right.
+\]
+
+% 动量的基本定义式，其中m与运动员的实力等因素有关，不受比赛时间的进展而导致变化影响，v跟运动员在比赛时随时间进展而变化的因素有关
+\begin{equation}
+p=m v
+\end{equation}
+% 描述运动员获胜的概率表达式的基本构成，其中后者使用tanh激活函数将动量单位转化为概率单位，p1-p2表示两个运动员之间的动量差异，第二个为展开式，表示为影响动量的各种因素的差值，所以说影响胜利概率的是运动员之间的能力和各种其他因素的相对值
+\begin{equation}
+\begin{aligned}
+& P_n=P_{\text {base }}+\frac{1}{2} \tanh \left(w \cdot\left({p_1-p_2}\right)\right) \\
+& P_n=P_{\text {base }}+\frac{1}{2} \tanh \left(w \cdot\sum_{i=1}^n\left(p_{i 1}-p_{i 2}\right)\right).
+\end{aligned}
+\end{equation}
+% 描述了运动员的动量变化原因，受各种因素的“趋势力”
+\begin{equation}
+p=\int_{t_1}^{t_2} F(t) d t
+\end{equation}
+% 以一个point为时间点，在这之间发生的v的变化原因是影响v的各种因素随时间的导数即变化趋势影响的
+\begin{equation}v_{n}=v_{n-1}+\frac{\partial v}{\partial t} t
+\end{equation}
+% a就是加速度，他受具体因素影响，时间t，Q为之前赢得point的历史影响，s为体力消耗等其他因素
+\begin{equation}a_{n}=g(t,Q,s)\end{equation}
+% 描述了传统模型在描述概率上与LSTM模型预测值的等价性
+\begin{equation}P_{n}=P_{base}+P_{server}\\+\alpha (p)=P_{LSTM}\end{equation}
+% 描述了这部分概率的取值范围
+\begin{equation}\frac{1}{2}\leq\alpha(p)+p_{server}\leq\frac{1}{2}\end{equation}
+% 描述了第n次Q的取值
+\begin{equation}Q_{n}=\begin{cases}1,win\\-1,fail\end{cases}\end{equation}
+% 描述了相邻两次Q的递推关系
+\begin{equation}History_{n}=History_{n-1}+\sum_{i=1}^{n-1}K_{i}Q_{i}\end{equation}
+% 描述了第一次His的取值
+\begin{equation}History_{1}=0\end{equation}
+% ，Q与每一次Q之间的关系是一个函数History
+\begin{equation}History_{n}=f\left(Q_{n-1},Q_{n-2},\ldots,Q_{1}\right)\end{equation}
+% 这是输入门的变量取值
+\begin{equation}I_{t}=\sigma(x_{t}\cdot k_{1}+h_{t-1}\cdot k_{2}+b_{1})\end{equation}
+% 这是遗忘门的变量取值
+\begin{equation}F_{t}=\sigma(x_{t}\cdot k_{3}+h_{t-1}\cdot k_{4}+b_{2})\end{equation}
+% 这是输出门的变量取值
+\begin{equation}O_{t}=\sigma(x_{t}\cdot k_{5}+h_{t-1}\cdot k_{6}+b_{3})\end{equation}
+% 这是候选记忆状态的取值
+\begin{equation}\tilde{C}_{t}=\tanh\left(x_{t}\cdot k_{7}+h_{t-1}\cdot k_{8}+b_{4}\right)\end{equation}
+% 这是记忆状态的取值
+\begin{equation}C_{t}=F_{t}\cdot C_{t-1}+I_{t}\cdot \tilde C_{t}\end{equation}
+% 以下是带入整理的公式
+\begin{equation}
+\begin{gathered}
+    H_{t} = O_{t} \cdot \tanh(C_{t}) = O_{t} \cdot \tanh\left(F_{t} \cdot C_{t-1} + I_{t} \cdot \tilde C_{t}\right) \\
+    = \sigma(x_{t} \cdot k_{5} + h_{t-1} \cdot k_{6} + b_{3}) \cdot \tanh\left(\sigma(x_{t} \cdot k_{3} + h_{t-1} \cdot k_{4} + b_{2}) \cdot C_{t-1} \right.\\
+    \quad \left. + \sigma(x_{t} \cdot k_{1} + h_{t-1} \cdot k_{2} + b_{1}) \cdot \tanh\left(x_{t} \cdot k_{7} + h_{t-1} \cdot k_{8} + b_{4}\right)\right)
+\end{gathered}
+\end{equation}
+% 这是使用f代替后的表达式
+\begin{equation}H_{t} = \sigma\left( f_{1}(x_{t}) \right) \cdot \tanh\left( \sigma(f_{2}(x_{t})) \cdot C_{t-1} + \sigma(f_{3}(x_{t})) \cdot \tanh(f_{4}(x_{t})) \right)\end{equation}
+% 这是f的表达式
+\begin{equation}
+f_{i}(x_{t}) = x_{t}\cdot k_{a_{i}(t)} + h_{t-1} \cdot k_{b_{i}(t)} + b_{c_{i}(t)}
+\end{equation}
+
+% 在随机概率下，play1获胜的概率
+\begin{equation}P_{1} = \frac{\left( P_{base} + P_{server} \right)\cdot m_{1}}{\left( P_{base} + P_{server} \right) \cdot  m_{1} +\left( P_{base} -P_{server} \right) \cdot m_{2} } 
+\end{equation}
+% 预测的准确率
+\begin{equation}\eta_{accuracy}=\frac{N_{true}}{N_{toral}}=\frac{N_{true}}{N_{true}+N_{false}}\end{equation}
+

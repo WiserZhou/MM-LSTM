@@ -1,0 +1,57 @@
+\section{Assumptions and Notations}
+\subsection{Assumptions and Justifications}
+To simplify the model, we make the following assumptions:
+
+\textbf{Assumption 1: Regarding influencing factors, we assume that we do not consider factors other than those providing data that may affect the results and model. }We only consider direct factors, and these factors are assumed to be independent of each other. Due to the complexity of factors influencing momentum in real life, even though more than 40 factors have been listed, there is a possibility that other factors could have a decisive impact on the final results.
+
+\textbf{Assumption 2: For the composition of momentum, we assume that it has properties similar to physical momentum.} We consider the momentum discussed in this paper to be essentially equivalent to the sum of psychological and physical effects. Since the athlete's inherent abilities do not change during the match, the most important influencing factor for their performance is assumed to be psychological. Both this type of momentum and physical momentum in physics can be seen as the combined results of multiple factors, with varying degrees of influence.
+
+\textbf{Assumption 3: For the data itself, we assume that the provided data is accurate and reliable. }Additionally, the data collected from other matches with reference links from the internet is assumed to be true and trustworthy. During model generalization, we used data from table tennis matches for training and comparison.
+
+\textbf{Assumption 4: Regarding symbol and constant replacements during the model formula simplification process, we assume that they are not considered, even though this may result in around a \(10\%\) error in the results.} This operation is to simplify the complexity of model calculations. Initially, we did not simplify the model during the initial calculations, which resulted in longer training times. In subsequent calculations, various factors had a significant impact.
+
+\textbf{Assumption 5: For the athletes in the model, we assume that the influencing factors for their performance mainly consider recent matches, and we do not consider the impact of previous matches. }This allows our model to remain closed for a period of time on the dataset, improving its stability and reducing the consideration of irrelevant factors.
+
+\textbf{Assumption 6: For time changes, we assume that the time for each score is average, without considering the time interval of each score.} This allows us to quantify time and better consider changes in various attributes.
+
+
+% \newpage
+\subsection{Notations}
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{cc}
+			\toprule[1.5pt]
+			Symbol&Definition\\
+			\midrule[1pt]
+			\(A\) & Replace the function related to the memory cell in the formula of the LSTM\\
+                \(B\) &  Replace the coefficient function before the tanh function in the LSTM \\
+                \(b_i\) & Bias in the input mapping\\
+                \(I_t\) & Function of the input gate\\
+                \(O_t\) & Function of the output gate\\
+                \(C_t\) & Function of the memory state\\
+                \({\tilde C_{t}}\) & Function of the candidate memory state\\
+                \(F_t\) & Function of the forget gate\\
+                \(h_t\) & The value of the hidden state.\\
+                \(k_i\) & The slope of the function representing the change in scores over a period of time\\
+                \(m_i\) & the strength value of player \\
+                
+                \(P_i\) & The probability of scoring in the i-th attempt\\
+                \(x_t\) & Inputs associated with the variation in time\\
+                \(\rho\) & The Spearman's rank correlation coefficient\\
+                \({N_{\text{false}}}\) & The number of errors in probability statistics\\
+                \({N_{\text{true}}}\) & The number of correct outcomes in probability statistics\\
+                \({N_{\text{total}}}\) & The total number of outcomes in probability statistics\\
+                \(P_{base}\) & the win rate value of a player base, set to a fixed value of 0.5\\
+                \(P_{server}\) & the portion of a player's win rate that is increased over the base win rate as a server\\
+                \(R_{\text{server}}\) & The probability of a server's advantage obtained through statistical analysis\\
+                \({x_{\text{normalized}}}\) & The normalized inputs\\
+                \(\eta_{accuracy}\) & The statistically obtained prediction accuracy\\
+                \(\sigma (x)\) & The sigmoid activation function\\
+                \({F_i}(x)\) & Referring to an activation function and mapping composition operation\\
+                \(R(x)\) & The rank order of a variable\\
+                \({K_{relative}}(n, m)\) & The mean of the relative differences in slope during the time interval from m to n\\
+			\bottomrule[1.5pt]
+		\end{tabular}
+	\end{center}
+\end{table}
+

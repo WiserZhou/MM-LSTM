@@ -1,0 +1,51 @@
+\newpage
+% 在希望应用该样式的页面上调用
+\thispagestyle{nopagenum}
+\begin{center} % 开始居中环境
+\textbf{ % 开始加粗
+\underline{ % 开始添加下划线
+\large{Report On use of AI}
+}} % 结束下划线和加粗
+\end{center} % 结束居中环境
+% \section{Report On use of AI}
+\begin{enumerate}
+\item OpenAI ChatGPT (Feb 6, 2024 version,ChatGPT-3.5)
+
+Query1: Could you please explain the exact interpolation method and formula?
+
+Output: Certainly! Interpolation is a technique used to estimate values between two known values or data points. There are various interpolation methods, and the choice of method depends on the nature of the data and the desired level of accuracy. I'll explain two commonly used interpolation methods: linear interpolation and Lagrange interpolation.
+
+1. \textbf{Linear Interpolation:}
+   Linear interpolation is a simple method that assumes a linear relationship between two adjacent data points. Given two points \((x_1, y_1)\) and \((x_2, y_2)\), the linear interpolation formula for estimating the value \(y\) at a point \(x\) between \(x_1\) and \(x_2\) is:
+   \[ y = y_1 + \frac{{(x - x_1) \cdot (y_2 - y_1)}}{{x_2 - x_1}} \]
+
+2. \textbf{Lagrange Interpolation:}
+   Lagrange interpolation uses a polynomial to fit the data points. For \(n+1\) data points \((x_0, y_0), (x_1, y_1), \ldots, (x_n, y_n)\), the Lagrange interpolation polynomial is given by:
+   \[ P(x) = \sum_{i=0}^{n} y_i \cdot L_i(x) \]
+   where \(L_i(x)\) is the Lagrange basis polynomial:
+   \[ L_i(x) = \prod_{j=0, j \neq i}^{n} \frac{{x - x_j}}{{x_i - x_j}} \]
+
+   The Lagrange polynomial passes through all the given data points and can be used to estimate the function values at points between the given data.
+
+These formulas provide a simplified explanation of linear and Lagrange interpolation. In practice, for more complex data, other interpolation methods like spline interpolation or polynomial interpolation of higher degree might be used, depending on the specific requirements and characteristics of the dataset.
+
+
+\item OpenAI ChatGPT (Feb 4, 2024 version,ChatGPT-3.5)
+
+Query1: Gradient calculation formula
+
+Output: In mathematics and computation, the gradient is typically a vector that represents the rate of change or slope of a function at a specific point. For a scalar function \(f(x)\), its gradient \(\nabla f(x)\) can be computed through partial derivatives. If \(f(x)\) is a multivariable function, the gradient is a vector where each component corresponds to the partial derivative with respect to the respective variable.
+
+The general formula for gradient computation is as follows:
+
+For a scalar function \(f(x_1, x_2, ..., x_n)\), its gradient \(\nabla f\) is a vector containing partial derivatives:
+
+\[ \nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, ..., \frac{\partial f}{\partial x_n} \right) \]
+
+Here, each \(\frac{\partial f}{\partial x_i}\) represents the partial derivative with respect to the variable \(x_i\).
+
+If you have a specific function \(f(x_1, x_2, ..., x_n)\), you can use this formula to compute its gradient.
+
+\end{enumerate}
+
+\thispagestyle{nopagenum}
